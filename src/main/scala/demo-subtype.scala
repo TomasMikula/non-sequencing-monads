@@ -1,21 +1,21 @@
 @main
 def demoSubtype =
 
-  val f: Nil.type  <:< Fallible[List[0]]   = summon
-  val g: List[0]   <:< Fallible[List[Int]] = summon
-  val h: List[Int] <:< Fallible[Seq[Int]]  = summon
+  val f: Nil.type  <:< Result[List[0]]   = summon
+  val g: List[0]   <:< Result[List[Int]] = summon
+  val h: List[Int] <:< Result[Seq[Int]]  = summon
 
   println {
     (f >=> g >=> h)
-      : Nil.type <:<  Fallible[Seq[Int]]
+      : Nil.type <:< Result[Seq[Int]]
   }
 
   println {
     (for
-      a <- summon[Monad[<:<, Fallible]].pure[Nil.type]
+      a <- summon[Nil.type <:< Result[Nil.type]]
       b <- f(a)
       c <- g(b)
       d <- h(c)
     yield d)
-      : Nil.type <:<  Fallible[Seq[Int]]
+      : Nil.type <:< Result[Seq[Int]]
   }

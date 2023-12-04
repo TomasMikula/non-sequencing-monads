@@ -7,7 +7,7 @@ def demoOp =
 
   println {
     (f >=> g >=> h)
-      .run(Id(List.range(1, 7)))
+      .run(Id(Nil))
   }
   // Output:
   //
@@ -25,7 +25,7 @@ def demoOp =
       i <- g(b)
       l <- h(i)
     yield l)
-      .run(Id(List.range(1, 7)))
+      .run(Id(Nil))
   }
   // Output:
   //
@@ -35,4 +35,3 @@ def demoOp =
   //   false
   //
   // That is, f, g, h execute in the opposite order
-
