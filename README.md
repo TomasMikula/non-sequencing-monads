@@ -1,6 +1,6 @@
 # Monads Are Not About Sequencing
 
-This repo contains code for examples presented in my talk _Monads Are Not About Sequencing_ (Functional Scala 2023, [slides](https://continuously.dev/presentations/Monads-not-about-sequencing_20231201.pdf)).
+This repo contains code for examples presented in my talk _Monads Are Not About Sequencing_ (Functional Scala 2023, [video](https://www.youtube.com/watch?v=ncnP6y91NNo), [slides](https://continuously.dev/presentations/Monads-not-about-sequencing_20231201.pdf)).
 
 Examples:
  - Monads in the category `<:<` (Scala's subtype relationship)
